@@ -1,0 +1,22 @@
+HTML {
+    /*using system font-stack*/
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-size: 115%; /*~18px*/
+    font-size: calc(16px + (30 - 16) * (100vw - 300px) / (1300 - 300) );
+    line-height: 1.5;
+    box-sizing: border-box;
+  }
+  
+  BODY {
+    margin: 0;
+    color: #3a3d40;
+    background: rgb(254, 255, 255);
+  }
+  
+  *, *::before, *::after {
+    box-sizing: inherit;
+    color: inherit;
+  }
+  
+  /*Actual Style*/
+  
