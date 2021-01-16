@@ -23,6 +23,10 @@ Download [`spinner-web-component.js`](spinner-web-component.js) file and link it
 </html>
 ```
 
+
+**NOTE:** When component is insterted into the DOM, it automatically gets `hidden` attribute set on it, that is, it will be hidden by default.
+
+
 ## Browser Support
 Chrome 54, Edge 79, Firefox 63, Opera 41, Safari 10.1, iOS Safari 10.3, Samsung Internet 6.0
 
@@ -167,6 +171,7 @@ Component supports the following properties:
   });
   ```
   
+  
   ### show
   Reveals component. 
   
@@ -177,6 +182,7 @@ Component supports the following properties:
   `aria-busy` will be set to `true` on the component's parent container (see [`aria-busy`](https://www.w3.org/TR/wai-aria-1.1/#aria-busy) for more info)
   
   `isShown` property of the component will be changed
+  
   
   ### hide
   Hides component. 
@@ -199,33 +205,33 @@ Component supports the following properties:
   ```css
     // default values
     spinner-component {
-            --hue: 0;
-            --lightness: 100%;
-            --saturation: 46%;
-            --alpha: 0;
+        --hue: 0;
+        --lightness: 100%;
+        --saturation: 46%;
+        --alpha: 0;
 
-            --box-shadow-hue: var(--hue);
-            --box-shadow-lightness: var(--lightness);
-            --box-shadow-saturation: 18%;
-            --box-shadow-alpha: var(--alpha);
+        --box-shadow-hue: var(--hue);
+        --box-shadow-lightness: var(--lightness);
+        --box-shadow-saturation: 18%;
+        --box-shadow-alpha: var(--alpha);
 
-            --box-shadow-x: 0px;
-            --box-shadow-y: 0px;
-            --box-shadow-blur: 3px;
-            --box-shadow-spread: 0px;
+        --box-shadow-x: 0px;
+        --box-shadow-y: 0px;
+        --box-shadow-blur: 3px;
+        --box-shadow-spread: 0px;
 
-            --spinner--color: hsla(var(--hue), var(--lightness), var(--saturation), var(--alpha));
-            --spinner--size: 1rem;
-            --spinner--box-shadow: var(--box-shadow-x) var(--box-shadow-y) var(--box-shadow-blur) var(--box-shadow-spread) hsla(var(--box-shadow-hue), var(--box-shadow-lightness), var(--box-shadow-saturation), var(--box-shadow-alpha));
-            --spinner--text-color: var(--spinner--color);
-            --spinner--backdrop: rgba(0, 0, 0, 0);
-            --spinner--text-size: var(--spinner--size);
+        --spinner--color: hsla(var(--hue), var(--lightness), var(--saturation), var(--alpha));
+        --spinner--size: 1rem;
+        --spinner--box-shadow: var(--box-shadow-x) var(--box-shadow-y) var(--box-shadow-blur) var(--box-shadow-spread) hsla(var(--box-shadow-hue), var(--box-shadow-lightness), var(--box-shadow-saturation), var(--box-shadow-alpha));
+        --spinner--text-color: var(--spinner--color);
+        --spinner--backdrop: rgba(0, 0, 0, 0);
+        --spinner--text-size: var(--spinner--size);
 
-            --spinner--direction-left: 50%;
-            --spinner--direction-top: 50%;
+        --spinner--direction-left: 50%;
+        --spinner--direction-top: 50%;
 
-            --spinner-text-direction-left: 0;
-            --spinner-text-direction-top: 0;
+        --spinner-text-direction-left: 0;
+        --spinner-text-direction-top: 0;
     }
   ```
   
