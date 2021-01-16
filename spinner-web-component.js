@@ -40,10 +40,11 @@
             if ((curVal == undefined && name !== "hidden") || (prevVal === curVal)) {
                 return;
             }
+            
             if (name === "text") {
                 this.text = curVal;
             }
-            // TODO handle hidden attribute both via show/hide and via setting attribute manually
+            
             if (name === "hidden") {
                 this.__setAriaBusy(!this.hidden);
             }
@@ -51,7 +52,6 @@
 
         /**===  text ===**/
         get text() {
-            debugger;
             const spinnerTextElem = this.shadowRoot.getElementById("spinnerText");
             if (spinnerTextElem) {
                 return spinnerTextElem.textContent;
@@ -98,7 +98,7 @@
 
 
             const defOpts = this._getMergedOptions(options);
-            // if during setup text.value is set by the user we take it, otherwise we use text set via attribute on the component
+            // if during setup `text.value` is set by user, we take it, otherwise we use text set via attribute on the component
             defOpts.text.value = defOpts.text.value || this.getAttribute("text");
 
             if (spinner) {
@@ -112,7 +112,6 @@
                 this._setSpinnerTextColor(spinnerText, defOpts.text.color);
                 this._adjustSpinnerTextDirection(spinnerText, defOpts.text.direction);
                 this._setSpinnerTextValue(spinnerText, defOpts.text.value);
-                debugger;
                 defOpts.parentContainer.appendChild(this);
             }
         }
@@ -137,7 +136,6 @@
         PRIVATE FUNCTIONS 
         =============================*/
         _upgradeProperty(prop) {
-            debugger;
             if (this.hasOwnProperty(prop)) {
                 const val = this[prop];
                 delete this[prop];
@@ -307,7 +305,7 @@
         }
 
         /**
-         * Sets Aria Label related attribute on the component
+         * Sets Aria Label related attributes on the component
          */
         __setAriaLabel() {
             const spinnerText = this.shadowRoot.getElementById("spinnerText");
@@ -385,10 +383,7 @@
       `;
         return template.content.cloneNode(true);
     };
-    // TODO: define CSS custom properties for user to change
-    // e.g. --spinner--text-color, --spinner--color, --spinner-text-size, --spinner--size, 
-    // --spinner--direction-left, --spinner--direction-top, --spinner--direction-right, --spinner--direction-bottom, 
-    // --spinner-text-direction-left, --spinner-text-direction-top, --spinner-text-direction-right, --spinner-text-direction-bottom
+
     function _getCssContent() {
         return `
         /*========================
@@ -621,24 +616,3 @@
     customElements.define("spinner-component", SpinnerComponent);
 
 })();
-
-/*
-/////// useful links:
-
-// ARIA
-https://dockyard.com/blog/2020/03/02/accessible-loading-indicatorswith-no-extra-elements (set aria-busy on the spinner container to indicate that container is getting new content (it can be anything which will hold our spinner))
-http://sap.github.io/techne/loading-spinner.html#usage-with-other-elements (aria-busy example)
-https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions
-https://stackoverflow.com/questions/38704467/how-to-label-a-loading-animation-for-wai-aria
-https://www.w3.org/TR/wai-aria-1.1/#status (role status)
-
-so it's either should be `<spinner-component role="alert"></spinner-component>` and `aria-busy="true"` on the parent
-or `<spinner-component role="status"></spinner-component>` and `aria-busy="true"` on the parent [Elements with the role status have an implicit aria-live value of polite and an implicit aria-atomic value of true.]
-
-if `spinnerText` has some text in it, spinner will add `aria-labelledby="spinnerText"` and remove `aria-label` attribute
-otherwise `aria-label` attribute will be used
-
-
-//
-https://github.com/Konrud/switch-web-component/blob/main/switch-web-component.js
-*/
