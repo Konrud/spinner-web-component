@@ -215,6 +215,7 @@ Component supports the following properties:
   You can customize component, by setting your css on the component itself and by using CSS custom properties (a.k.a CSS variables).
   
   **NOTE:** component's dimension properties mainly defined in `em` unit (this unit is relative to the `font-size` property that defined on the element itself or on the parent element), thus, you can change its dimensions by setting `font-size` on the component itself or on the parent element.
+  
   ```css
     // default values
     spinner-component {
@@ -247,6 +248,7 @@ Component supports the following properties:
        --spinner-text-direction-top: 0;
     }
   ```
+  
   
   ### CSS custom properties
   The following properties can be used to customize the component:
