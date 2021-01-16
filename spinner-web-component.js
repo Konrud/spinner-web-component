@@ -142,6 +142,7 @@
                 this[prop] = val;
             }
         }
+
         /**
          * Private method, gets default options for the spinner according to the received options
          * that need to be overwritten.
@@ -149,6 +150,8 @@
          *   @prop {HTMLElement} parentContainer - Containing block for the spinner
          *   (Note: container should have CSS `position` property other than static)
          *   @prop {Object} direction - Custom directions to adjust spinner container manually
+         *   @prop {String} color - CSS Valid value for the color/background properties in string representation, e.g. "grey"/"rgb(255, 30, 30)"/#f1f1f1
+         *   @prop {Number} size - Size of the spinner, 1 is 100%, 0.5 is 50% of the spinner's original size
          *   @prop {Object} text - Options for the spinner's text element
          * @return {Object} - Object with all merged options
          */
@@ -157,6 +160,8 @@
             const defOptions = {
                 parentContainer: opts.parentContainer instanceof window.HTMLElement ? opts.parentContainer : this.parentElement,
                 direction: _isObject(opts.direction) ? opts.direction : {},
+                color: opts.color || null,
+                size: opts.size || null,
                 text: _isObject(opts.text) ? opts.text : {}
             };
             return defOptions;
