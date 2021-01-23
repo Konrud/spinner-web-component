@@ -107,29 +107,37 @@ Component supports the following properties:
   
   Method receives `options` object parameter with the following properties:
   
-  `{HTMLElement}` `parentContainer` - Containing Element for the component (coponent's container) 
+  - `{HTMLElement}` `parentContainer` - Containing Element for the component (coponent's container) 
     
   **NOTE:** container should have CSS `position` property other than static (e.g. `relative` or `absolute`)
   
-  `{Object}` `direction` - Custom directions to adjust component manually (e.g. `top: 10px` / `left: 50%` etc...)
-  *     Example: spinner.setup({..., "direction": {top: "41%"} });
+  - `{Object}` `direction` - Custom directions to adjust component manually (e.g. `top: 10px` / `left: 50%` etc...)
+    ```javascript
+    Example: spinner.setup({..., "direction": {top: "41%"} });
+    ```
     
-  `{String}` `color` - CSS Valid value for the color/background properties in string representation, e.g. `grey`/`rgb(255, 30, 30)`/`#f1f1f1`
+  - `{String}` `color` - CSS Valid value for the color/background properties in string representation, 
+  e.g. `grey`/`rgb(255, 30, 30)`/`#f1f1f1`
   
-  `{Number}` `size` - Size of the component, 1 is 100%, 0.5 is 50% of the spinner's original size (**NOTE:** component's size, internally, set via `font-size` property)
+  - `{Number}` `size` - Size of the component, 1 is 100%, 0.5 is 50% of the spinner's original size 
+  (**NOTE:** component's size, internally, set via `font-size` property)
   
-  `{Object}` `text` - Options for the component's text element:
+  - `{Object}` `text` - Options for the component's text element:
   
-   `{String}` `color` - CSS Valid value for the color/background properties in string representation, e.g. `grey`/`rgb(255, 30, 30)`/`#f1f1f1`
+    - `{String}` `color` - CSS Valid value for the color/background properties in string representation, 
+    e.g. `grey`/`rgb(255, 30, 30)`/`#f1f1f1`
    
-   `{Number}` `size` - Size of the component's text, 1 is 100%, 0.5 is 50% of the component's original size
+    - `{Number}` `size` - Size of the component's text, 1 is 100%, 0.5 is 50% of the component's original size
    
-   `{Object}` `direction` - Custom directions to adjust component's text manually (e.g. top: `10px` / `left: 50%` etc...)
-   *     example: spinner.setup({..., text: { "direction": {top: "41%"} } });
+    - `{Object}` `direction` - Custom directions to adjust component's text manually (e.g. top: `10px` / `left: 50%` etc...)
+      ```javascript
+      Example: spinner.setup({..., text: { "direction": {top: "41%"} } });
+      ```
    
-   `{String}` `value` - Component's text element's value (internally set via `HTMLElement.textContent`)
+    - `{String}` `value` - Component's text element's value (internally set via `HTMLElement.textContent`)
    
    > **NOTE:** If during setup `text.value` is set, it is used as component's text, otherwise text set via attribute on the component will be used
+  
   
   **Examples:**
   
@@ -290,16 +298,16 @@ Component supports the following properties:
    Sets spread for component's `box-shadow` property. [default value: 0]
    
    #### --spinner--box-shadow
-   Sets component's box-shadow. [default value: var(--box-shadow-x) var(--box-shadow-y) var(--box-shadow-blur) var(--box-shadow-spread) hsla(var(--box-shadow-hue), var(--box-shadow-lightness), var(--box-shadow-saturation), var(--box-shadow-alpha))]
+   Sets component's `box-shadow`. [default value: `var(--box-shadow-x) var(--box-shadow-y) var(--box-shadow-blur) var(--box-shadow-spread) hsla(var(--box-shadow-hue), var(--box-shadow-lightness), var(--box-shadow-saturation), var(--box-shadow-alpha))`]
    
    #### --spinner--color
-   Sets component's color property. [default value: `hsla(var(--hue), var(--lightness), var(--saturation), var(--alpha))` if none of the custom properties are set, contaning block's `color` proerty value will be used]  
+   Sets component's `color` property. [default value: `hsla(var(--hue), var(--lightness), var(--saturation), var(--alpha))` if none of the custom properties are set, contaning block's `color` proerty value will be used]  
    
    #### --spinner--size
    Sets component's size. [default value: 1rem]
    
    #### --spinner--text-color
-   Sets component's text color. [default value: `var(--spinner--color)`]
+   Sets component's `text color`. [default value: `var(--spinner--color)`]
    
    #### --spinner--backdrop
    Sets component's backdrop which is displayed beneath the component when visible. [default value: `rgba(0, 0, 0, 0)`]
@@ -308,16 +316,16 @@ Component supports the following properties:
    Sets component's text size. [default value: `var(--spinner--size)`]
    
    #### --spinner--direction-left
-   Sets component's direction left. [default value: 50%]
+   Sets component's direction `left`. [default value: 50%]
    
    #### --spinner--direction-top
-   Sets component's direction top. [default value: 50%]
+   Sets component's direction `top`. [default value: 50%]
    
    #### --spinner-text-direction-left
-   Sets component's text direction left. [default value: 0]
+   Sets component's text direction `left`. [default value: 0]
    
    #### --spinner-text-direction-top
-   Sets component's text direction top. [default value: 0]
+   Sets component's text direction `top`. [default value: 0]
    
 
    
