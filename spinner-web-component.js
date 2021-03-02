@@ -432,7 +432,7 @@
             left: 0; top: 0;
             width: 100%; height: 100%;
             contain: layout; /*[1]*/
-            font-size: var(--spinner-size);
+            font-size: var(--spinner--size);
             background: var(--spinner--backdrop);
             color: var(--spinner--color); /*[2]*/
             z-index: 9999;
