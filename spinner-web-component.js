@@ -33,7 +33,7 @@
         }
 
         disconnectedCallback(e) {
-
+            this.__setAriaBusy(!this.hidden);
         }
 
         attributeChangedCallback(name, prevVal, curVal) {
